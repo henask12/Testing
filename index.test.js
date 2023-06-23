@@ -1,8 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import { strLength, reverseString } from "./index.js";
-test("strLength should return the correct char count", () => {
+import { strLength, reverseString, capitalize } from "./index.js";
+test("should return the correct char count", () => {
     const input = "this is test case";
     const output = 17;
 
@@ -11,11 +11,20 @@ test("strLength should return the correct char count", () => {
     expect(result).toBe(output);
 });
 
-test("reverseString should return the reversed string", () => {
+test("should return the reversed string", () => {
     const input = "Hello World";
-    const expectedOutput = "dlroW olleH";
+    const output = "dlroW olleH";
 
     const result = reverseString(input);
 
-    expect(result).toEqual(expectedOutput);
+    expect(result).toEqual(output);
+});
+
+test("should capitalize the first character of the string", () => {
+    const input = "hello";
+    const output = "Hello";
+
+    const result = capitalize(input);
+
+    expect(result).toBe(output);
 });
