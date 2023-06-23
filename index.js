@@ -7,6 +7,9 @@ const reverseString = (str) => {
 };
 
 const capitalize = (str) => {
+    if (typeof str !== "string") {
+        throw new Error("str or input must be a string");
+    }
     return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
